@@ -15,7 +15,7 @@
 
 ## 安装
 
-先安装 Git、Node.js/npm，并确保当前 Git 身份有本私有仓库读取权限。项目成员可以在自己的工作项目目录执行：
+本仓库公开提供测试。先安装 Git、Node.js/npm，在自己的工作项目目录执行：
 
 ```bash
 npx -y skills add jasonwong363/xhs-food-team-skills --all
@@ -27,7 +27,7 @@ npx -y skills add jasonwong363/xhs-food-team-skills --all
 npx -y skills add jasonwong363/xhs-food-team-skills -g --all
 ```
 
-出现权限错误时，由仓库管理员将你加入协作者，或先使用团队分发的ZIP。ZIP解压后也可执行 `npx -y skills add ./xhs-food-team-skills --all`。如目录重名，先检查版本，不覆盖团队已有修改。
+也可以从仓库页面选择 Code → Download ZIP。ZIP解压后进入其上级目录，按实际文件夹名执行 `npx -y skills add ./xhs-food-team-skills-main --all`。如目录重名，先检查版本，不覆盖已有修改。
 
 重新开启客户端会话后，检查能否看到上表4个名称。无需安装本包制作时使用的 dbs-skill-maker。
 
@@ -56,3 +56,9 @@ python -m pip install -r requirements.txt
 互动仅代表导出快照，不能证明自然流量或到店转化。菜名相近不等于同一道菜；图片不能证明具体品种或在售状态。图像判断需支持看图的 Agent，脚本只负责清单、复制与校验。
 
 发布检查记录见 [验证说明](验证说明.md)。
+
+## 参与测试
+
+先用一个客户、3条笔记试跑。普通聊天工具可以读取规则和你上传的材料，但批量文件整理需要宿主提供文件访问、看图及脚本执行能力；本包不保证所有客户端都能直接安装或完整执行。
+
+发现问题可在本仓库 Issues 提交：使用工具与模型、出错步骤、脱敏输入、预期结果、实际结果。不要上传客户原始资料或凭证。不能使用 Issues 时，可向文章发布者反馈。
