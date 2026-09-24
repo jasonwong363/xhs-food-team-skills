@@ -2,15 +2,17 @@
 
 用于从客户资料出发，批量筛选对标笔记，按事实最小改写，再整理图片并按文配图。换客户只换资料，无需重做 Skill。
 
-## 包含5个 Skill
+## 包含7个 Skill
 
 | 顺序 | Skill | 工作内容 |
 |---|---|---|
-| 1 | xhs-food-content-positioning | 菜单、评价和门店资料整理为有依据的文案基准 |
-| 2 | xhs-benchmark-pool-screening | 从100—200条或更多导出记录中筛选同品类对标 |
-| 3 | xhs-note-minimal-rewrite | 对已选原稿做必要替换，保留语气，核对菜品，标题默认≤20字 |
-| 4 | xhs-copy-delivery | 按十列标准交付飞书，自动组合完整复制列，回读验证 |
-| 5 | xhs-food-image-planning | 全量整理原图，按已确认正文选3—5张配图 |
+| 1 | xhs-food-content-positioning | 先选择素人笔记、截流帖笔记或截流帖评论；建立品牌与评论基准、10—15道菜品照片拍摄确认清单 |
+| 2 | xhs-template-library-builder | 将评论、截流帖、素人笔记筛选入库，保留原文、来源和审核状态 |
+| 3 | xhs-benchmark-pool-screening | 从100—200条或更多导出记录中筛选同品类对标；合格原稿可再进入模板库 |
+| 4 | xhs-note-minimal-rewrite | 对已选整篇笔记原稿做必要替换，保留语气，核对菜品，标题默认≤20字 |
+| 5 | xhs-comment-template-rewrite | 按模板库编号调用A主评与B-E跟评并做有依据的最小替换 |
+| 6 | xhs-copy-delivery | 按十列标准交付飞书，自动组合完整复制列，回读验证 |
+| 7 | xhs-food-image-planning | 全量整理原图，按已确认正文选3—5张配图 |
 
 不包含已弃用的看图原创和旧版流程总入口。也不包含自动采集工具、飞书连接器或自动发布功能；飞书交付Skill使用宿主已有的连接能力。
 
@@ -30,7 +32,7 @@ npx -y skills add jasonwong363/xhs-food-team-skills -g --all
 
 也可以从仓库页面选择 Code → Download ZIP。ZIP解压后进入其上级目录，按实际文件夹名执行 `npx -y skills add ./xhs-food-team-skills-main --all`。如目录重名，先检查版本，不覆盖已有修改。
 
-重新开启客户端会话后，检查能否看到上表5个名称。无需安装本包制作时使用的 dbs-skill-maker。
+重新开启客户端会话后，检查能否看到上表7个名称。无需安装本包制作时使用的 dbs-skill-maker。
 
 脚本可选依赖：Python 3.10+、Pillow、openpyxl。只有执行本地图片或表格脚本才需要：
 
@@ -66,11 +68,13 @@ python -m pip install -r requirements.txt
 
 ## 2026.09.17 更新与跨电脑一致性
 
+2026.09.24：内容定位Skill增加逐条评价证据、素人／截流双基准、商家菜品照片确认单，以及“地址行政区划（城市→区县）→地域×品类候选→聚光核验→分层决策”的关键词基准规则，含未验证词标记和冲突数据复核；不再因缺照片而阻断拍摄建议。新增模板库整理与评论模板调用Skill，将品牌事实基准与可复用评论/笔记原稿库分开维护。评论模板调用新增用户确认案例库机制，内置齐庆滨江银泰20条确认案例，批量输出时优先避免A主评论机械重复，并允许基于目标品牌证据做轻微菜品替换。截流写法依客户确认，默认不生成视频或经营整改方案。
+
 仓库skills/是团队通用Skill唯一维护源；客户约定留在客户目录，不回灌公共规则。版本见VERSION，文件清单见manifest.json。
 
 新增正文证据检查、离线筛选核对页、strict/adaptive两种改写模式、独立飞书十列交付。筛选页显示全文与数据，不能以标题初筛冒充精读。
 
-升级前保留本机自定义改动，再从本仓库重新安装。不要只复制SKILL.md，必须包含scripts/与references/；重新开启会话检查5个Skill。不要用旧ZIP覆盖新版。
+升级前保留本机自定义改动，再从本仓库重新安装。不要只复制SKILL.md，必须包含scripts/与references/；重新开启会话检查7个Skill。不要用旧ZIP覆盖新版。
 
 验证安装内容：`python scripts/check_manifest.py <安装后skills目录>`。该检查比对资源哈希，不等于语义行为验证。
 运行确定性测试：`python -m unittest discover -s tests -v`。语义验收案例见tests/behavior-cases.md；不能把字段校验通过宣称为AI已理解原文。

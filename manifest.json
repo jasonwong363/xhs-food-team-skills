@@ -1,21 +1,30 @@
 {
-  "version": "2026.09.17",
+  "version": "2026.09.24.3",
   "files": {
     "xhs-benchmark-pool-screening/references/review-contract.md": "92f2ed98da37071233f783a8d2a17dc9fe1cca2b232ce39eb7576ae289730658",
     "xhs-benchmark-pool-screening/scripts/build_review.py": "c5a81ff617e1650952b500ec7ee2207d077d51f768a8d321122244347a6ab50c",
     "xhs-benchmark-pool-screening/scripts/prepare_pool.py": "76615df70e1ab09d2686025f1f52c943bb5bc042b64002e7fc5126771cc50451",
     "xhs-benchmark-pool-screening/SKILL.md": "90ee1100e55cf953d06876996de9a43f69151a054d01433c15f9df71865ead5b",
+    "xhs-comment-template-rewrite/agents/openai.yaml": "4933e0dc4791e026de4417cd82d5fcf3c3f7b4c2907688c0c4ec5290a03b8cc3",
+    "xhs-comment-template-rewrite/evals/evals.json": "bc312a9a50e6d524e029066f15448edc991e2b3beb55708e296228cf3ac653d4",
+    "xhs-comment-template-rewrite/examples/qiqing-confirmed-comment-cases-20260924.md": "ee3df8f639a2fc542163ef9acc000fa7338940e1ef671f7982720916f252170c",
+    "xhs-comment-template-rewrite/SKILL.md": "97f89197bce564eaaccc905d693512562c55905e950efbe47c278815f148b320",
     "xhs-copy-delivery/references/format.md": "e6c0f1a5d9c7e307837fcce9ca006cb80a1980d44ffde12f2b303b8765108e51",
     "xhs-copy-delivery/scripts/prepare_delivery.py": "9fe91b9c546131e0ebd4f74e270691ceb0662d6f968f94ffa88a7e11990b6a7d",
     "xhs-copy-delivery/SKILL.md": "3e24dad82c95d553ea7123990cb6a73ae9bab4426e3443907782ac3902ab57b3",
-    "xhs-food-content-positioning/references/positioning-schema.md": "2a8e7c6e6bfcdf446d7c24e28529d3835b3dddd17a2994be7611ddfa8a5bac48",
-    "xhs-food-content-positioning/SKILL.md": "97c3c8fdf548eef42bf12ab3ac9c023f81fa9f6eed25579627764075ef4d676c",
+    "xhs-food-content-positioning/references/positioning-schema.md": "9d3d049aaac7348014e5291fbd23c5a09cd508a6a687a3471556db228586009d",
+    "xhs-food-content-positioning/SKILL.md": "0577d5a5073b5562e7568b84aaa79aff1d6b46b1052267a2f0c372eb2dd8b5fc",
     "xhs-food-image-planning/references/image-plan-schema.md": "47dbfd7913ab8c7e5d2fd06dddece7300c111419006af3aa217502ef26c6670f",
     "xhs-food-image-planning/scripts/inventory_images.py": "2757c68533f52ef07c1dbf779289e2d7d0a06e4f9b2612a252745531e0afed3a",
     "xhs-food-image-planning/scripts/materialize_catalog.py": "40f061803e97dc195b9fb006e395b3367c10d8279e6fed2b6e1b747929c158db",
     "xhs-food-image-planning/scripts/materialize_groups.py": "161eaa096333214e5cae3ccadf2238b895902284058ecd3e1934496c6f5ddb9b",
     "xhs-food-image-planning/SKILL.md": "7e04024895fa940fa0feb9b5db9d7fa016fdcd61c77edd40028e72ef3a5d552f",
     "xhs-note-minimal-rewrite/references/client-template.md": "f5add57dca99ed897c0f7194ac40350f8a3cdc890336a2be3920b65e0891be18",
-    "xhs-note-minimal-rewrite/SKILL.md": "91f7f8d71bddc7535c19e88e7c418ccbf60bbcc44e1d8762bedc7c909fd61de7"
+    "xhs-note-minimal-rewrite/SKILL.md": "91f7f8d71bddc7535c19e88e7c418ccbf60bbcc44e1d8762bedc7c909fd61de7",
+    "xhs-template-library-builder/agents/openai.yaml": "9b15e91664ed52e7a1107d44caef4b742648773e1c0f16c5ebf7db3de9ef5ebe",
+    "xhs-template-library-builder/evals/evals.json": "19ffb8db02b1c0b1c3a16e62c1c1efe514f0cd8269c307cba53a44e6e39431a6",
+    "xhs-template-library-builder/references/library-rules.md": "91f6783be0508632b2ee47c03be71148c722650273c45a137d03c6d0146dcac9",
+    "xhs-template-library-builder/references/library-schema.md": "50b343e838fc9828a60ea70c70b1bf1ae5d3830736590a022bde2d2564e3b8e8",
+    "xhs-template-library-builder/SKILL.md": "9455beae56457c189b70b8779da157324833ad2df4f387e6ece74aa8561356a1"
   }
 }
