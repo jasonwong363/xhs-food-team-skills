@@ -2,7 +2,7 @@
 
 用于从客户资料出发，批量筛选对标笔记，按事实最小改写，再整理图片并按文配图。换客户只换资料，无需重做 Skill。
 
-## 包含7个 Skill
+## 包含8个 Skill
 
 | 顺序 | Skill | 工作内容 |
 |---|---|---|
@@ -12,6 +12,7 @@
 | 4 | xhs-note-minimal-rewrite | 对已选整篇笔记原稿做必要替换，保留语气，核对菜品，标题默认≤20字 |
 | 5 | xhs-comment-template-rewrite | 按模板库编号调用A主评与B-E跟评并做有依据的最小替换 |
 | 6 | xhs-copy-delivery | 按十列标准交付飞书，自动组合完整复制列，回读验证 |
+| 8 | xhs-demand-post | 从模板库匹配大字报需求帖，正文留空，每条6—10个话题；先交Excel审核，再独立匹配评论 |
 | 7 | xhs-food-image-planning | 全量整理原图，按已确认正文选3—5张配图 |
 
 不包含已弃用的看图原创和旧版流程总入口。也不包含自动采集工具、飞书连接器或自动发布功能；飞书交付Skill使用宿主已有的连接能力。
@@ -32,7 +33,7 @@ npx -y skills add jasonwong363/xhs-food-team-skills -g --all
 
 也可以从仓库页面选择 Code → Download ZIP。ZIP解压后进入其上级目录，按实际文件夹名执行 `npx -y skills add ./xhs-food-team-skills-main --all`。如目录重名，先检查版本，不覆盖已有修改。
 
-重新开启客户端会话后，检查能否看到上表7个名称。无需安装本包制作时使用的 dbs-skill-maker。
+重新开启客户端会话后，检查能否看到上表8个名称。无需安装本包制作时使用的 dbs-skill-maker。
 
 脚本可选依赖：Python 3.10+、Pillow、openpyxl。只有执行本地图片或表格脚本才需要：
 
@@ -54,7 +55,7 @@ python -m pip install -r requirements.txt
 
 ## 数据与验证范围
 
-本仓库仅包含方法、通用模板与脚本。客户评价、照片、导出原文、账号凭证由团队放在各自客户目录，不提交到仓库。
+本仓库包含方法、脚本及用户授权发布的模板总库。客户原始评价、照片、账号凭证保留在各自客户目录。模板库中的审核状态保持原样，待确认素材不等于已验证事实。
 
 互动仅代表导出快照，不能证明自然流量或到店转化。菜名相近不等于同一道菜；图片不能证明具体品种或在售状态。图像判断需支持看图的 Agent，脚本只负责清单、复制与校验。
 
@@ -74,7 +75,16 @@ python -m pip install -r requirements.txt
 
 新增正文证据检查、离线筛选核对页、strict/adaptive两种改写模式、独立飞书十列交付。筛选页显示全文与数据，不能以标题初筛冒充精读。
 
-升级前保留本机自定义改动，再从本仓库重新安装。不要只复制SKILL.md，必须包含scripts/与references/；重新开启会话检查7个Skill。不要用旧ZIP覆盖新版。
+升级前保留本机自定义改动，再从本仓库重新安装。不要只复制SKILL.md，必须包含scripts/与references/；重新开启会话检查8个Skill。不要用旧ZIP覆盖新版。
 
 验证安装内容：`python scripts/check_manifest.py <安装后skills目录>`。该检查比对资源哈希，不等于语义行为验证。
 运行确定性测试：`python -m unittest discover -s tests -v`。语义验收案例见tests/behavior-cases.md；不能把字段校验通过宣称为AI已理解原文。
+
+## 2026.09.28 更新
+
+- 新增独立大字报路径：需求帖匹配 → Excel审核 → 评论匹配；正文留空，每条6—10个相关话题。
+- 评论匹配增加自然表达与整组衔接检查，保留模板来源、评价证据及否定反馈边界。
+- 同步8个Skill及简写展示名。
+- [最新模板总库](library/小红书模板库-叠加执行表版.xlsx)与[库说明](library/README.md)。`npx skills add`安装Skill，模板总库需从此链接单独下载。
+
+模板中的本机路径已转换为来源标识；来源截图与原始执行附件未随库发布。未将本轮新生成、尚待审核的评论列入用户确认库。
