@@ -1,4 +1,4 @@
 interface:
-  display_name: "xhs-comment-template-rewrite"
-  short_description: "按评论库编号调用A主评和B-E跟评并做有依据的最小替换"
+  display_name: "xhs-comment"
+  short_description: "评论改写：调用主评与跟评模板，按真实体验做最小替换并核验"
   default_prompt: "使用 $xhs-comment-template-rewrite，按我指定的评论模板库编号调取A主评论和B-E跟评，只做有依据的最小替换并保留来源。"
