@@ -1,0 +1,4 @@
+interface:
+  display_name: "xhs-demand"
+  short_description: "从模板库筛选改写小红书大字报需求帖，并写入Excel等待人工审核"
+  default_prompt: "使用 $xhs-demand-post，根据品牌截流基准和模板库生成大字报需求帖，写入指定Excel后停止等待审核，不处理评论。"
