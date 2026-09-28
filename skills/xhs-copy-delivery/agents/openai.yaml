@@ -1,0 +1,3 @@
+interface:
+  display_name: "xhs-delivery"
+  short_description: "文案交付：按统一模板写入飞书表格，保留来源、审核状态和复制列"
