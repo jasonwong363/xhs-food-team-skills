@@ -1,0 +1,3 @@
+interface:
+  display_name: "xhs-benchmark"
+  short_description: "对标筛选：按时间、品类与互动筛选参考笔记，保留来源和入选理由"
