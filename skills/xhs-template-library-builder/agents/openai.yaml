@@ -1,4 +1,4 @@
 interface:
-  display_name: "xhs-template-library-builder"
-  short_description: "将小红书评论、截流需求帖和素人体验笔记筛选后沉淀为可追溯模板库"
+  display_name: "xhs-library"
+  short_description: "模板建库：分类整理评论、截流帖与素人笔记，保留来源便于检索"
   default_prompt: "使用 $xhs-template-library-builder，将我提供的小红书素材筛选并按评论、截流帖或素人笔记类型沉淀到可追溯的 Excel 模板库。"
