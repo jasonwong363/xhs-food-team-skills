@@ -1,0 +1,41 @@
+{
+  "default_demand_excel": "FMT-XHS-DEMAND-14COL-v1",
+  "updated": "2026-09-29",
+  "confirmed_by": "用户要求：表格格式要按照这种；格式放到数据库，后面直接调用，不再每次提醒。",
+  "formats": [
+    {
+      "id": "FMT-XHS-DEMAND-14COL-v1",
+      "status": "用户指定格式，空白母版",
+      "path": "FMT-XHS-DEMAND-14COL-v1.xlsx",
+      "sheet": "需求帖及评论_执行表",
+      "source_reference": "用户确认的齐庆EFC欧洲中心店执行表格式（原始客户执行表未随技能发布）",
+      "headers": [
+        "编号",
+        "大字报内容",
+        "标题",
+        "正文",
+        "话题",
+        "发布账号",
+        "博主昵称",
+        "小红书链接",
+        "评论参考草稿（A—E）",
+        "价格",
+        "渠道",
+        "截图",
+        "抖音链接",
+        "截图"
+      ],
+      "title_cell": "A1",
+      "merged_title": "A1:I1",
+      "header_row": 2,
+      "data_start_row": 3,
+      "blank_sample_rows": 20,
+      "freeze_rows": 2,
+      "comment_column": "I",
+      "body_column": "D",
+      "scope": "需求帖Excel、需求帖及A—E评论Excel；不替换素人笔记飞书十列格式",
+      "usage": "复制母版后填入本批；按数量扩展或缩减数据行并继承交替底色、边框、换行、行高和列宽；仅填已授权字段；需求帖阶段D正文与I评论留空，评论阶段按编号仅回填I列。来源映射另存同目录JSON，不擅自加列。"
+    }
+  ],
+  "path_resolution": "path相对于本格式索引所在目录解析；用户本次指定文件优先。"
+}
