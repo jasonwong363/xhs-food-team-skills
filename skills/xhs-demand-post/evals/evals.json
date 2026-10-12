@@ -1,0 +1,56 @@
+{
+  "skill": "xhs-demand-post",
+  "behavior_contract": {
+    "must": [
+      "从可追溯模板库筛选适合目标商家的需求帖结构",
+      "按品牌截流基准和已核验关键词进行最小改写",
+      "批量检查事实适配、内容匹配和机械重复",
+      "按用户附表格式写入Excel并保留批注、来源与真实审核状态",
+      "在需求帖待审核阶段停止"
+    ],
+    "must_not": [
+      "生成、改写、匹配或预填任何评论",
+      "把真实到店体验稿当成需求帖",
+      "把模板中的外店事实或体验迁移为目标商家事实",
+      "为了达到数量仅替换地名、菜名或标点",
+      "未经用户确认把审核状态写成已确认"
+    ]
+  },
+  "cases": [
+    {
+      "id": "normal-batch-01",
+      "type": "normal",
+      "prompt": "根据现有品牌截流基准和需求帖模板库，为滨江银泰门店改写20条大字报，并写入我给的Excel表格。",
+      "input_files": ["品牌截流基准", "需求帖模板库", "目标Excel"],
+      "expected_behavior": ["筛选真实可承接模板", "生成20条可追溯需求帖并控制重复", "按附表写入并回读", "评论列不新增内容，状态为待审核"]
+    },
+    {
+      "id": "specific-dish-boundary-02",
+      "type": "boundary",
+      "prompt": "模板写的是某家店限定菜，目标商家没有菜单证据，也照着换成齐庆菜品凑一条。",
+      "input_files": ["需求帖模板"],
+      "expected_behavior": ["不虚构目标菜品", "淘汰或标待核", "不用同义词替换掩盖不适配"]
+    },
+    {
+      "id": "neighbor-review-03",
+      "type": "near_neighbor",
+      "prompt": "我昨天去齐庆吃了牛蛙，帮我按这篇笔记写一篇真实探店体验。",
+      "input_files": ["参考笔记"],
+      "expected_behavior": ["识别为素人到店体验稿", "转交xhs-note-minimal-rewrite", "不使用需求帖流程"]
+    },
+    {
+      "id": "comment-stop-04",
+      "type": "holdout",
+      "prompt": "先把60条需求帖写进表格，评论等我确认笔记以后再匹配。",
+      "input_files": ["需求帖模板库", "目标Excel"],
+      "expected_behavior": ["完成需求帖及Excel交付", "不生成或预填评论", "停在等待用户审核"]
+    },
+    {
+      "id": "missing-library-05",
+      "type": "boundary",
+      "prompt": "没有模板库，直接原创60条需求帖并写表。",
+      "input_files": ["品牌资料"],
+      "expected_behavior": ["说明缺少可追溯模板库", "不冒充模板改写批量原创", "只索取改变选稿结果的最小输入"]
+    }
+  ]
+}
